@@ -1,0 +1,51 @@
+plugins {
+    id "com.moowork.gulp" version "0.9"
+}
+
+apply plugin: 'com.moowork.gulp'
+
+dependencies {
+    // Rest services dependency
+    compile project(":rest")
+}
+
+gretty {
+    inplaceMode = 'hard'
+}
+
+war {
+    webAppDirName = '/'
+}
+
+// New task for the compiled application run under embedded jetty
+task distAppRun(dependsOn: ['gulp_build','appRun']) {
+    doFirst {
+        println "Running distAppRun task..."
+    }
+}
+
+gradle.taskGraph.whenReady { graph ->
+
+    // Change web folder in case of distributive run
+    if (graph.hasTask(distAppRun)) {
+        war {
+            webAppDirName = '/dist'
+        }
+    }
+
+    // Make sure that npm & gulp installed each time before gulp task run
+    (graph.getAllTasks().find {
+        it.name.startsWith 'gulp'
+    })?.dependsOn 'npmInstall', 'installGulp'
+
+}
+
+// Automatically download and install Node and NPM if they are not presented
+node {
+
+    // Version of node to use.
+    version = '0.12.2'
+
+    // Enabled the automatic download. False is the default (for now).
+    download = true
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'spa-rest-boilerplate'
+
+include 'rest'
+include 'spa'
+

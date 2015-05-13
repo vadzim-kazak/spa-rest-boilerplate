@@ -1,0 +1,11 @@
+{
+  "name": "spa",
+  "version": "0.0.1",
+  "description": "Java script single page application boilerplate",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-bower": "*",
+    "gulp-processhtml": "*",
+    "requirejs": "*"
+  }
+}

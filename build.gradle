@@ -1,0 +1,33 @@
+plugins {
+    id "org.akhikhl.gretty" version "1.2.2"
+}
+
+allprojects {
+
+    apply plugin: "war"
+    apply plugin: "org.akhikhl.gretty"
+
+    sourceCompatibility = 1.8
+    version = '0.1'
+
+    dependencies {
+        repositories {
+            jcenter()
+        }
+    }
+
+    gretty {
+        contextPath = ''
+    }
+}
+
+dependencies {
+    // Rest services dependency
+    compile project(":rest")
+}
+
+war {
+    webAppDirName = './spa/dist/app'
+}
+
+assemble.dependsOn ':spa:gulp_build'

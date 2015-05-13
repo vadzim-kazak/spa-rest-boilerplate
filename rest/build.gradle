@@ -1,0 +1,24 @@
+dependencies {
+
+    // Spring dependencies
+    ['spring-core',
+     'spring-web',
+     'spring-webmvc',
+     'spring-beans',
+     'spring-jdbc',
+     'spring-orm',
+     'spring-tx'].each { compile "org.springframework:$it:4.1.6.RELEASE" }
+
+    // Jackson
+    ['jackson-core', 'jackson-databind'].each { compile "com.fasterxml.jackson.core:$it:2.5.3" }
+
+    // Servlet API
+    providedCompile "javax.servlet:javax.servlet-api:3.+"
+
+    // JUnit
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+gretty {
+    managedClassReload = true
+}

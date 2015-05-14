@@ -15,18 +15,21 @@ This boilerplate is intended to help with a quick project startup.<br/>
 </ol>
 
 Also the following gradle commands can be useful:</br>
-<ul>
-  REST module:</br>
+
+  <h6>REST module:</h6>
+  <ul>
   <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
-  SPA module:
+  </ul>
+  <h6>SPA module:</h6>
+  <ul>
   <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
-</ul>
+  </ul>
 
 <h5>REST module customization</h5>
 <ul>
-  <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in 'spa-rest-boilerplate/gradle.properties' file if you need something else.</li>
-  <li>Out of the box package for java sources is <i>com.company.project..</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> by new package value if you proceed with Spring.</li>
+  <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in the <i>spa-rest-boilerplate/gradle.properties</i> file if you need another version.</li>
+  <li>Out of the box package for java sources is <i>com.company.project.</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>
 </ul>
 
 <h5>SPA module customization</h5>

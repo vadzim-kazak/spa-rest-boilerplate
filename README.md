@@ -14,7 +14,7 @@ This boilerplate is intended to help with a quick project startup.<br/>
 <li>Run application in the embedded Jetty application container using <i>gradle appRun</i> command from <i>spa-rest-boilerplate</i> folder. This will trigger download and setup of all required dependencies.</li>
 </ol>
 
-Also the following gradle commands can be useful:</br>
+Also the following gradle commands can be useful:<br/>
   REST module:
   <ul>
   <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
@@ -25,7 +25,7 @@ Also the following gradle commands can be useful:</br>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
   </ul>
 
-<h5>SPA module customization</h5>
+<h4>SPA module customization</h4>
 <ul>
   <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/libs</i> folder.</li></br>
   <li>In order to customize gulp behavior please update <i>spa-rest-boilerplate/spa/gulpfile.js</i> config file. It provides the following gulp tasks out of the box:</br>
@@ -41,7 +41,7 @@ Also the following gradle commands can be useful:</br>
   </li>
 </ul>
 
-<h5>REST module customization</h5>
+<h4>REST module customization</h4>
 <ul>
   <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in the <i>spa-rest-boilerplate/gradle.properties</i> file if you need another version.</li>
   <li>Out of the box package for java sources is <i>com.company.project.</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>

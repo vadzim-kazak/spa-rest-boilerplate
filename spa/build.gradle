@@ -2,8 +2,6 @@ plugins {
     id "com.moowork.gulp" version "0.9"
 }
 
-apply plugin: 'com.moowork.gulp'
-
 dependencies {
     // Rest services dependency
     compile project(":rest")
@@ -13,16 +11,30 @@ gretty {
     inplaceMode = 'hard'
 }
 
-war {
-    webAppDirName = '/'
-    dependsOn 'gulp_init'
-	includes.add  'app/'
-}
+project.afterEvaluate {
 
-// New task for the compiled application run under embedded jetty
-task distAppRun(dependsOn: ['gulp_build','appRun']) {
-    doFirst {
-        println "Running distAppRun task..."
+    appRun.dependsOn 'gulp_init'
+
+    // New task for the compiled application run under embedded jetty
+    task distAppRun {
+
+        dependsOn 'gulp_build', 'appRun'
+        appRun.mustRunAfter 'gulp_build'
+
+        //dependsOn.add 'appRun'
+        doFirst {
+            println "Running distAppRun task..."
+        }
+
+        doLast {
+            appRun.execute()
+        }
+    }
+
+    war {
+        webAppDirName = '/'
+        dependsOn 'gulp_init'
+        includes.add  'app/'
     }
 }
 
@@ -38,9 +50,11 @@ gradle.taskGraph.whenReady { graph ->
 
 // Make sure that npm & gulp installed each time before gulp task run
 tasks.addRule('') { String taskName ->
+
     if (taskName.startsWith("gulp_")) {
         project.getTasksByName(taskName, false).each {
             it.dependsOn 'npmInstall', 'installGulp'
+            installGulp.mustRunAfter 'npmInstall'
         }
     }
 }
@@ -54,5 +68,3 @@ node {
     // Enabled the automatic download. False is the default (for now).
     download = !property('use.globally.installed.node');
 }
-
-

@@ -30,4 +30,8 @@ war {
     webAppDirName = './spa/dist/app'
 }
 
-assemble.dependsOn ':spa:gulp_build'
+project.afterEvaluate {
+
+    assemble.dependsOn ':spa:gulp_build'
+    appRun.dependsOn ':spa:gulp_build'
+}

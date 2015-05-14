@@ -27,7 +27,7 @@ Also the following gradle commands can be useful:</br>
 
 <h5>SPA module customization</h5>
 <ul>
-  <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/libs</i> folder.</li>
+  <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/libs</i> folder.</li></br>
   <li>In order to customize gulp behavior please update <i>spa-rest-boilerplate/spa/gulpfile.js</i> config file. It provides the following gulp tasks out of the box:</br>
   <ul>
     <li><i>init</i> - bower invocation for downloading dependencies.</li>
@@ -36,11 +36,8 @@ Also the following gradle commands can be useful:</br>
     <li><i>build</i> - full build which performs all tasks above.</li>
   </ul>
   
-  Please udpate <i>spa-rest-boilerplate/spa/package.json</i> file by any required gulp dependency .</br>
-  Any gulp task can be invoked directly from gradle using the following templae:</br>
-  <i>gradle gulp_&lt;gulp task name&gt;</i></br>
-  or directly via</br>
-  <i>gulp &lt;task_name&gt;</i> if you have globally installed gulp distributive.
+  Please update <i>spa-rest-boilerplate/spa/package.json</i> file with any required gulp dependency .<br/>
+  Any gulp task can be invoked directly from gradle using <i>gradle gulp_&lt;gulp task name&gt;</i> template or directly via <i>gulp &lt;task_name&gt;</i> if you have globally installed gulp distributive.
   </li>
 </ul>
 

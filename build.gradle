@@ -27,7 +27,7 @@ dependencies {
 }
 
 war {
-    webAppDirName = './spa/dist/app'
+    webAppDirName = 'spa/dist/app'
 }
 
 project.afterEvaluate {

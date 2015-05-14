@@ -17,5 +17,4 @@ require(['requirejs','underscore', 'jquery'], function(requirejs, _, $) {
         $('#restResponse').html(data);
     });
 
-    _.each([1, 2, 3], alert);
 });

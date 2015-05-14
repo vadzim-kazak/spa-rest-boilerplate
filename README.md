@@ -19,8 +19,7 @@ App will be available by the following link: http://localhost:8080/
 Also the following gradle commands can be useful:<br/>
   REST module:
   <ul>
-  <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.<br/>
-  REST service will be available by the following link: http://localhost:8080/v1/test
+  <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code. Service will be available by the following link: http://localhost:8080/v1/test
   </li>
   </ul>
   SPA module:

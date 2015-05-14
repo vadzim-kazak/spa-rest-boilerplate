@@ -19,6 +19,22 @@ This boilerplate intends to help with a quick project startup.</br>
 
 <h5>SPA module customization</h5>
 <ul>
-  <li>All dependencies to js frameworks & libraries are managed via Bower package manager. Please update <i>spa-rest-boilerplate\spa\bower.json</i> configuration file during application development.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> So, if you need to download new bower package please use the following commands:<i>gradle gulp_init</i> or <i>gulp init</i> (in case if you have external globally installed gulp).</br> All downloaded packages bower puts into <i>spa-rest-boilerplate\spa\libs</i> folder.</li>
+  <li>All dependencies to js frameworks & libraries are managed via Bower package manager. Please update <i>spa-rest-boilerplate\spa\bower.json</i> configuration file during application development.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> All downloaded packages bower puts into <i>spa-rest-boilerplate\spa\libs</i> folder.</li>
+  <li>In order to enhance gulp behavior please update <i>spa-rest-boilerplate\spa\gulpfile.js</i> config file. Out og the box it provides four gulp tasks:</br>
+  <ul>
+    <li><i>init</i> - bower invocation task</li>
+    <li><i>optimization</i> - processing & optimization of js & css files using requiresjs r.js optimizer. Result is stored in <i>spa-rest-boilerplate\spa\dist\app</i> folder.</li>
+    <li><i>html</i> - html files processing task. Replace links to css & js files using <a href="https://github.com/Wildhoney/gulp-processhtml">gulp-processhtml</a> plugin.</li>
+    <li><i>build</i> - aggregation task for processing of all web resources.</li>
+  </ul>
+  
+  Please udpate <i>spa-rest-boilerplate\spa\package.json</i> file by any required gulp dependency .</br>
+  Any gulp task can be invoked directly from gradle using the following templae:</br>
+  <i>gradle gulp_&lt;gulp task name&gt;</i></br>
+  or directly via</br>
+  <i>gulp &lt;task_name&gt;</i> if you have globally installed gulp distributive.
+  <li>
+  
+  
   
 </ul>

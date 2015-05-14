@@ -11,6 +11,15 @@ This boilerplate intends to help with a quick project startup.</br>
 <li>Startup application in the embedded Jetty application container using <i>"gradle appRun"</i> commad from spa-rest-boilerplate folder. This will trigger downloading and setup of all required dependencies.</li>
 </ol>
 
+Also the following gradle commands can be usefull:</br>
+<ul>
+  REST module:</br>
+  <li><i>gradle aRu</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source codes.</li>
+  SPA module:
+  <li><i>gradle aRu</i> - SPA module stuartup in the embedded Jetty container in dev mode. All changes into <i>spa-rest-boilerplate\spa\app</i> folder will be available in browser via refresh.</li>
+  <li><i>gradle dAR</i> - SPA module startup in the embedded Jetty container in PROD mode. All web resources are going to be processed by r.js optimizer.</li>
+</ul>
+
 <h5>REST module customization</h5>
 <ul>
   <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in 'spa-rest-boilerplate/gradle.properties' file if you need something else.</li>
@@ -33,8 +42,6 @@ This boilerplate intends to help with a quick project startup.</br>
   <i>gradle gulp_&lt;gulp task name&gt;</i></br>
   or directly via</br>
   <i>gulp &lt;task_name&gt;</i> if you have globally installed gulp distributive.
-  <li>
-  
-  
-  
+  </li>
 </ul>
+

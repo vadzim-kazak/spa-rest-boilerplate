@@ -24,7 +24,7 @@ gulp.task('init', function() {
 /**
  * Scripts processing task
  */
-gulp.task('optimization', function () {
+gulp.task('optimization', ['init'], function () {
     requirejs.optimize({
         appDir: './app',
         baseUrl: 'js',
@@ -32,7 +32,7 @@ gulp.task('optimization', function () {
         mainConfigFile: './app/js/main.js',
         name: 'main',
         removeCombined: true,
-        fileExclusionRegExp: /.html$|.txt$/,
+        fileExclusionRegExp: /.html$/,
         optimizeCss: 'standard'
     });
 });
@@ -40,7 +40,7 @@ gulp.task('optimization', function () {
 /**
  * HTML processing task
  */
-gulp.task('html', function() {
+gulp.task('html', ['optimization'], function() {
 
     return gulp.src('./app/*.html')
                .pipe(processhtml())

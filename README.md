@@ -48,5 +48,5 @@ Also the following gradle commands can be useful:<br/>
 <h4>REST module customization</h4>
 <ul>
   <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in the <i>spa-rest-boilerplate/gradle.properties</i> file if you need another version.</li>
-  <li>Out of the box package for java sources is <i>com.company.project.</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>
+  <li>Out of the box package for java sources is <i>com.company.project</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>
 </ul>

@@ -15,35 +15,28 @@ This boilerplate is intended to help with a quick project startup.<br/>
 </ol>
 
 Also the following gradle commands can be useful:</br>
-
-  <b>REST module:</b>
+  REST module:
   <ul>
   <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
   </ul>
-  <b>SPA module:</b>
+  SPA module:
   <ul>
   <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
   </ul>
 
-<h5>REST module customization</h5>
-<ul>
-  <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in the <i>spa-rest-boilerplate/gradle.properties</i> file if you need another version.</li>
-  <li>Out of the box package for java sources is <i>com.company.project.</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>
-</ul>
-
 <h5>SPA module customization</h5>
 <ul>
-  <li>All dependencies to js frameworks & libraries are managed via Bower package manager. Please update <i>spa-rest-boilerplate\spa\bower.json</i> configuration file during application development.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> All downloaded packages bower puts into <i>spa-rest-boilerplate\spa\libs</i> folder.</li>
-  <li>In order to enhance gulp behavior please update <i>spa-rest-boilerplate\spa\gulpfile.js</i> config file. Out og the box it provides four gulp tasks:</br>
+  <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/libs</i> folder.</li>
+  <li>In order to customize gulp behavior please update <i>spa-rest-boilerplate/spa/gulpfile.js</i> config file. It provides the following gulp tasks out of the box:</br>
   <ul>
-    <li><i>init</i> - bower invocation task</li>
-    <li><i>optimization</i> - processing & optimization of js & css files using requiresjs r.js optimizer. Result is stored in <i>spa-rest-boilerplate\spa\dist\app</i> folder.</li>
-    <li><i>html</i> - html files processing task. Replace links to css & js files using <a href="https://github.com/Wildhoney/gulp-processhtml">gulp-processhtml</a> plugin.</li>
-    <li><i>build</i> - aggregation task for processing of all web resources.</li>
+    <li><i>init</i> - bower invocation for downloading dependencies.</li>
+    <li><i>optimization</i> - processing js & css files using r.js optimizer. Result is stored in <i>spa-rest-boilerplate/spa/dist/app</i> folder.</li>
+    <li><i>html</i> - processing html files. Replaces links to css & js files using <a href="https://github.com/Wildhoney/gulp-processhtml">gulp-processhtml</a> plugin.</li>
+    <li><i>build</i> - full build which performs all tasks above.</li>
   </ul>
   
-  Please udpate <i>spa-rest-boilerplate\spa\package.json</i> file by any required gulp dependency .</br>
+  Please udpate <i>spa-rest-boilerplate/spa/package.json</i> file by any required gulp dependency .</br>
   Any gulp task can be invoked directly from gradle using the following templae:</br>
   <i>gradle gulp_&lt;gulp task name&gt;</i></br>
   or directly via</br>
@@ -51,3 +44,8 @@ Also the following gradle commands can be useful:</br>
   </li>
 </ul>
 
+<h5>REST module customization</h5>
+<ul>
+  <li>Java version 1.7 is used by default. Please update <i>java.version</i> property in the <i>spa-rest-boilerplate/gradle.properties</i> file if you need another version.</li>
+  <li>Out of the box package for java sources is <i>com.company.project.</i>. Don't forget to update Spring java config  <i>rest\src\main\java\com\company\project\config\ApplicationInitializer.java</i> & <i>rest\src\main\java\com\company\project\config\ApplicationConfig.java</i> files with new package value.</li>
+</ul>

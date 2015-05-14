@@ -7,7 +7,7 @@ allprojects {
     apply plugin: "war"
     apply plugin: "org.akhikhl.gretty"
 
-    sourceCompatibility = 1.8
+    sourceCompatibility = property("java.version")
     version = '0.1'
 
     dependencies {

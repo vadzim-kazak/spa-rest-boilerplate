@@ -52,7 +52,7 @@ node {
     version = '0.12.2'
 
     // Enabled the automatic download. False is the default (for now).
-    download = true
+    download = !property('use.globally.installed.node');
 }
 
 

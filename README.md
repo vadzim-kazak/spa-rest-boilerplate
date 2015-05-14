@@ -11,7 +11,9 @@ This boilerplate is intended to help with a quick project startup.<br/>
 
 <ol>
 <li>Download boilerplate using <i>"git clone https://github.com/vadzim-kazak/spa-rest-boilerplate.git"</i> command.</li>
-<li>Run application in the embedded Jetty application container using <i>gradle appRun</i> command from <i>spa-rest-boilerplate</i> folder. This will trigger download and setup of all required dependencies.</li>
+<li>Run application in the embedded Jetty application container using <i>gradle appRun</i> command from <i>spa-rest-boilerplate</i> folder. This will trigger download and setup of all required dependencies.<br/>
+App will be available by the following link: http://localhost:8080/
+</li>
 </ol>
 
 Also the following gradle commands can be useful:<br/>
@@ -24,6 +26,7 @@ Also the following gradle commands can be useful:<br/>
   <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
   </ul>
+  In both cases app will be available by the following link: http://localhost:8080/app
 
 <h4>SPA module customization</h4>
 <ul>

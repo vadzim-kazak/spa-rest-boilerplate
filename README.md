@@ -16,11 +16,11 @@ This boilerplate is intended to help with a quick project startup.<br/>
 
 Also the following gradle commands can be useful:</br>
 
-  <h6>REST module:</h6>
+  <b>REST module:</b>
   <ul>
   <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
   </ul>
-  <h6>SPA module:</h6>
+  <b>SPA module:</b>
   <ul>
   <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>

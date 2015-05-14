@@ -19,14 +19,16 @@ App will be available by the following link: http://localhost:8080/
 Also the following gradle commands can be useful:<br/>
   REST module:
   <ul>
-  <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
+  <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.<br/>
+  REST service will be available by the following link: http://localhost:8080/v1/test
+  </li>
   </ul>
   SPA module:
   <ul>
   <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
-  </ul>
   In both cases app will be available by the following link: http://localhost:8080/app
+  </ul>
 
 <h4>SPA module customization</h4>
 <ul>

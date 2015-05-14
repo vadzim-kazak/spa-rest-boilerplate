@@ -1,23 +1,26 @@
 # spa-rest-boilerplate
-This boilerplate intends to help with a quick project startup.</br> 
-<b>spa-rest-boilerplate</b> consists of two subprojects:</br>
-<b>rest</b> - Java REST services module based on Spring framework.</br>
-<b>spa</b> - JavaScript single page application module. By default it is based on Backbone & RequireJS libraries. But it can be easily updated with your own favorites framework - all dependencies are managed by <b>bower</b> configuration. Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.
+This boilerplate is intended to help with a quick project startup.<br/> 
+
+<b>spa-rest-boilerplate</b> consists of two subprojects:<br/>
+<ul>
+<li><b>spa</b> - JavaScript single page application module. By default it is based on Backbone & RequireJS libraries. But it can be easily updated with your own favorites framework - all dependencies are managed by <b>bower</b> configuration.<br/> Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.</li>
+<li><b>rest</b> - Java REST services module based on Spring framework.</li>
+</ul>
 
 <h2>How-To</h2>
 
 <ol>
 <li>Download boilerplate using <i>"git clone https://github.com/vadzim-kazak/spa-rest-boilerplate.git"</i> command.</li>
-<li>Startup application in the embedded Jetty application container using <i>"gradle appRun"</i> commad from spa-rest-boilerplate folder. This will trigger downloading and setup of all required dependencies.</li>
+<li>Run application in the embedded Jetty application container using <i>gradle appRun</i> command from <i>spa-rest-boilerplate</i> folder. This will trigger download and setup of all required dependencies.</li>
 </ol>
 
-Also the following gradle commands can be usefull:</br>
+Also the following gradle commands can be useful:</br>
 <ul>
   REST module:</br>
-  <li><i>gradle aRu</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source codes.</li>
+  <li><i>gradle appRun</i> - REST services startup in the embedded Jetty container with auto redeployment of changed source code.</li>
   SPA module:
-  <li><i>gradle aRu</i> - SPA module stuartup in the embedded Jetty container in dev mode. All changes into <i>spa-rest-boilerplate\spa\app</i> folder will be available in browser via refresh.</li>
-  <li><i>gradle dAR</i> - SPA module startup in the embedded Jetty container in PROD mode. All web resources are going to be processed by r.js optimizer.</li>
+  <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
+  <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
 </ul>
 
 <h5>REST module customization</h5>

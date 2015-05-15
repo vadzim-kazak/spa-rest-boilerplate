@@ -34,4 +34,5 @@ project.afterEvaluate {
 
     assemble.dependsOn ':spa:gulp_build'
     appRun.dependsOn ':spa:gulp_build'
+    prepareInplaceWebAppFolder.mustRunAfter ':spa:gulp_build'
 }

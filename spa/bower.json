@@ -5,6 +5,7 @@
     "jquery": "latest",
     "backbone": "latest",
     "underscore": "latest",
-    "requirejs": "latest"
+    "requirejs": "latest",
+    "bootstrap": "latest"
   }
 }

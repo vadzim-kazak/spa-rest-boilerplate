@@ -33,7 +33,7 @@ war {
 
 project.afterEvaluate {
 
-    assemble.dependsOn ':spa:gulp_build'
-    appRun.dependsOn ':spa:gulp_build'
-    prepareInplaceWebAppFolder.mustRunAfter ':spa:gulp_build'
+    assemble.dependsOn ':spa:gulp_buildDist'
+    appRun.dependsOn ':spa:gulp_buildDist'
+    prepareInplaceWebAppFolder.mustRunAfter ':spa:gulp_buildDist'
 }

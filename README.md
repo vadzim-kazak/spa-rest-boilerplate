@@ -24,7 +24,7 @@ Also the following gradle commands can be useful:<br/>
   </ul>
   SPA module:
   <ul>
-  <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be updated in browser automatically via livereload server.</li>
+  <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be updated in browser automatically via <b>livereload</b> server.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
   In both cases app will be available by the following link: <i>http://localhost:8080/app</i>
   </ul>

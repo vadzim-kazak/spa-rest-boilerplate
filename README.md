@@ -3,7 +3,7 @@ This boilerplate is intended to help with a quick project startup.<br/>
 
 <b>spa-rest-boilerplate</b> consists of two subprojects:<br/>
 <ul>
-<li><b>spa</b> - JavaScript single page application module. By default it is based on Backbone & RequireJS libraries. But it can be easily updated with your own favorites framework - all dependencies are managed by <b>bower</b> configuration.<br/> Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.</li>
+<li><b>spa</b> - JavaScript single page application module. Based on CommonJS modules syntax. All dependencies are managed by <b>bower</b> configuration.<br/> Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.</li>
 <li><b>rest</b> - Java REST services module based on Spring framework.</li>
 </ul>
 
@@ -24,14 +24,14 @@ Also the following gradle commands can be useful:<br/>
   </ul>
   SPA module:
   <ul>
-  <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be available in browser via refresh.</li>
+  <li><i>gradle appRun</i> - SPA module startup in the embedded Jetty container in development mode. All changes in the <i>spa-rest-boilerplate/spa/app</i> folder will be updated in browser automatically via livereload server.</li>
   <li><i>gradle distAppRun</i> - SPA module startup in the embedded Jetty container in production mode. All web resources are going to be processed by r.js optimizer.</li>
   In both cases app will be available by the following link: <i>http://localhost:8080/app</i>
   </ul>
 
 <h4>SPA module customization</h4>
 <ul>
-  <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/libs</i> folder.</li></br>
+  <li>All dependencies on js frameworks & libraries are managed via bower package manager. Please update <i>spa-rest-boilerplate/spa/bower.json</i> configuration file if you need new dependencies.</br> Internally bower is triggered via the following chain: <i>gradle->gradle-gulp-pluign->gulp->gulp-bower-plugin->bower.</i></br> Bower puts all downloaded packages into <i>spa-rest-boilerplate/spa/app/js/libs</i> folder.</li></br>
   <li>In order to customize gulp behavior please update <i>spa-rest-boilerplate/spa/gulpfile.js</i> config file. It provides the following gulp tasks out of the box:</br>
   <ul>
     <li><i>init</i> - bower invocation for downloading dependencies.</li>

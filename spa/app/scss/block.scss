@@ -1,0 +1,28 @@
+@import 'util/bem';
+
+// BEM styles example
+.mainBlock {
+
+  width: 100%;
+  height: 100%;
+
+  @include modifier('blackBackground') {
+    background-color: black;
+  }
+
+  // Header element
+  @include element('header') {
+
+    margin: 10px;
+
+    // Element modifiers
+    @include modifier('redBackgound') {
+      background-color: red;
+    }
+  }
+
+  // Footer element
+  @include element('footer') {
+    margin: 20px;
+  }
+}

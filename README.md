@@ -3,7 +3,7 @@ This boilerplate is intended to help with a quick project startup.<br/>
 
 <b>spa-rest-boilerplate</b> consists of two subprojects:<br/>
 <ul>
-<li><b>spa</b> - JavaScript single page application module. Based on CommonJS modules syntax (powered by <b>Browserify</b>). All dependencies are managed by <b>bower</b> configuration.<br/> Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.</li>
+<li><b>spa</b> - JavaScript single page application module. Based on CommonJS modules syntax (powered by <b>browserify</b>). All dependencies are managed by <b>bower</b> configuration.<br/> Also out of the box spa module provides <b>gulp</b> building support via <a href="https://github.com/srs/gradle-gulp-plugin">com.moowork.gulp</a> gradle plugin.</li>
 <li><b>rest</b> - Java REST services module based on Spring framework.</li>
 </ul>
 

@@ -11,15 +11,21 @@ gretty {
     inplaceMode = 'hard'
 }
 
+ext {
+    isDevelopmentModeRun = false
+}
+
 project.afterEvaluate {
 
-    appRun.dependsOn 'gulp_init'
+    appRun.dependsOn 'gulp_init', 'runResourcesWatcher'
+    runResourcesWatcher.mustRunAfter 'gulp_init'
 
-    // New task for the compiled application run under embedded jetty
+    // Runs distributive version of the application under embedded jetty container
     task distAppRun {
 
-        dependsOn 'gulp_build', 'appRun'
-        appRun.mustRunAfter 'gulp_build'
+        dependsOn 'gulp_buildDist', 'appRun'
+        appRun.mustRunAfter 'gulp_buildDist'
+        gulp_buildRelease.mustRunAfter 'gulp_init'
 
         //dependsOn.add 'appRun'
         doFirst {
@@ -36,15 +42,35 @@ project.afterEvaluate {
         dependsOn 'gulp_init'
         includes.add  'app/'
     }
+
+    gradle.taskGraph.whenReady { graph ->
+
+        // Change web folder in case of distributive run
+        if (graph.hasTask(distAppRun)) {
+            war {
+                webAppDirName = '/dist'
+            }
+        }
+
+        // Development mode run detection
+        if (graph.hasTask(appRun) && !graph.hasTask(distAppRun)) {
+            isDevelopmentModeRun = true
+        }
+    }
+
 }
 
-gradle.taskGraph.whenReady { graph ->
+/**
+ *  Runs gulp resources watcher task
+ */
+task runResourcesWatcher() {
 
-    // Change web folder in case of distributive run
-    if (graph.hasTask(distAppRun)) {
-        war {
-            webAppDirName = '/dist'
-        }
+    onlyIf {isDevelopmentModeRun}
+
+    doLast {
+        // Need to run gulp task as separate process
+        ProcessBuilder pb = new ProcessBuilder('cmd', '/C', 'start', '\"Resources Watcher\"', 'gradle', 'gulp_watch');
+        pb.start();
     }
 }
 

@@ -5,7 +5,20 @@
   "dependencies": {
     "gulp": "*",
     "gulp-bower": "*",
+    "browserify": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*",
+    "livereload": "*",
+    "gulp-if": "*",
     "gulp-processhtml": "*",
-    "requirejs": "*"
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-concat": "*",
+    "gulp-watch": "*",
+    "gulp-plumber": "*",
+    "gulp-livereload": "*",
+    "gulp-minify-css": "*",
+    "gulp-uglify": "*",
+    "vinyl-buffer": "*"
   }
 }

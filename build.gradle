@@ -13,6 +13,7 @@ allprojects {
     dependencies {
         repositories {
             jcenter()
+            mavenCentral()
         }
     }
 

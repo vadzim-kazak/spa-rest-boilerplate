@@ -4,14 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>spa-rest</title>
+
+    <!-- build:css css/style.css -->
+        <link rel="stylesheet" href="../dist/app/css/style.css">
+    <!-- /build -->
+
 </head>
 <body>
 
     <h3>spa rest boilerplate</h3>
     Service response: <span id="restResponse"></span>
 
+    <!-- LiveReload client loading -->
+    <!-- build:remove -->
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- /build -->
+
     <!-- build:js js/main.js -->
-    <script data-main="js/main.js" src="../libs/requirejs/require.js"></script>
+    <script src="../dist/app/js/main.js"></script>
     <!-- /build -->
 
 </body>
